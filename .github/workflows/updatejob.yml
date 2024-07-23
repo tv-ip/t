@@ -52,6 +52,5 @@ jobs:
         uses: gacts/purge-jsdelivr-cache@v1.1.1
         with:
           url: |
-            https://cdn.jsdelivr.net/gh/tv-ip/t@main/index.m3u
-            https://cdn.jsdelivr.net/gh/tv-ip/t@master/index.m3u
+            https://cdn.jsdelivr.net/gh/tv-ip/t/index.m3u
             
