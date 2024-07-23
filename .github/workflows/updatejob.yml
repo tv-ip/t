@@ -17,6 +17,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    permissions:
+      contents: write
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -37,7 +39,6 @@ jobs:
           mv /tmp/updated_file.txt index.m3u
       - name: Commit changes
         run: |
-          git config --global user.name "gitaction"
           git add index.m3u
           git commit -m "Updated file with downloaded content"
           git push
