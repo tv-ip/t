@@ -41,8 +41,13 @@ jobs:
         run: |
           git config --global user.name "gitaction"
           git add index.m3u
-          git commit -m "Updated file with downloaded content"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          else
+            git commit -m "Updated file"
+            git push
+          fi
       - name: Purge jsDelivr cache
         uses: gacts/purge-jsdelivr-cache@v1.1.1
         with:
