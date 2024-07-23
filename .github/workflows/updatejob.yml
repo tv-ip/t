@@ -35,7 +35,7 @@ jobs:
       - name: Copy from sample file
         run: |
           cat start.txt > /tmp/updated_file.txt
-          cat /tmp/downloaded_content.txt >> /tmp/updated_file.txt
+          tail -n +2 /tmp/downloaded_content.txt >> /tmp/updated_file.txt
           mv /tmp/updated_file.txt index.m3u
       - name: Commit changes
         run: |
